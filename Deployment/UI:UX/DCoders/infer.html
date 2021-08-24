@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D-Coders AI</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <h1 style="text-align:center;">D-Coders No-Code AI!</h1>
+            <div id="accessID" style="text-align:right;margin-top: -30px;"></div>
+            <form method="POST" id="signup-form" class="signup-form" >
+                <div>
+                    <h3>Choose Project Template</h3>
+                    <fieldset>
+                        <h2>What you wish to do?</h2>
+                        <p class="desc">Choose suitable project template and proceed to next step so we can train your model</p>
+                        <div class="fieldset-content">
+                            <div class="choose-bank">
+                                <p class="choose-bank-desc">Select the project template</p>
+                                <div id="projectTemplates" class="form-radio-flex">
+                                    <div class="form-radio-item">
+                                        <input type="radio" class="radioBtnClass" name="choose_bank" id="bank_1" value="IMG_REC" checked="checked" />
+                                        <label for="bank_1"><img src="images/imageClassification.png" alt=""></label>
+                                    </div>
+
+                                    <div class="form-radio-item">
+                                        <input type="radio" class="radioBtnClass" name="choose_bank" id="bank_3" value="NLP_CLS" />
+                                        <label for="bank_3"><img src="images/nlp_temp.png" alt=""></label>
+                                    </div>
+                            </div>
+                    </fieldset>
+
+                    <h3>Test Your Model</h3>
+                    <fieldset>
+                        <h2>Model Inference</h2>
+                        <p class="desc">Enter the Access ID and check the training status. </br> Test your model once the training is done.</p>
+                        <div class="fieldset-content">
+
+                            <div class="form-group">
+                                    <label for="token_id_infer" class="form-label">Enter your Access ID:</label>
+                                    <input type="text" name="token_id_infer" id="token_id_infer"  />
+                                    <span class="text-input">Example  :<span>  rohit439</span></span>
+                            </div>
+                            <button id="checkInfer" onclick="return checkInferStaus()"class="button" style="width:150px;height:40px;">Validate Token</button>               
+                            <br><div id="debugMsg" style="font-size: 25px;text-align:center;"></div>
+                            <br>
+                            <textarea id="NLPtextBox" name="NLPtextBox" rows="10" cols="50" class="center" style="visibility:hidden;position:absolute;" border="1"></textarea>
+                            <table id="imageInfer" class="infertable center" style="overflow-y:200px;visibility:hidden;position:relative;" border="1">
+                                <tr class="font_light input_text" style="text-align:center;">
+                                   <th>Select Image</th>
+                                   <th>Preview</th>
+                                </tr>
+                                <tr style='text-align:center;'>
+                                    <td><input type="file" id="imageFileUpload" name="imageFileUpload" class="browseButton" onchange="previewUpdate(this)"></td>
+                                    <td style="width:150px;height:150px;"><output id="filePreviewImage"> </output></td>
+                                </tr>
+                            </table>`
+                            <p id="PredictionMsg" style="font-size: 25px;text-align:center;visibility:hidden;">Prediction : <span id="predictionID" style="color: #00ff00"></span></p>
+                        </div>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="vendor/jquery-steps/jquery.steps.min.js"></script>
+    <script src="vendor/minimalist-picker/dobpicker.js"></script>
+    <script src="vendor/nouislider/nouislider.min.js"></script>
+    <script src="vendor/wnumb/wNumb.js"></script>
+    <script src="js/infer_actions.js"></script>
+    <script src="js/action.js"></script>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</body>
+
+</html>

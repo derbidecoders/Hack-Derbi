@@ -1,0 +1,4 @@
+
+
+
+//$('#tokenGenBtn').click(generateToken);
